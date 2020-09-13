@@ -1,0 +1,19 @@
+CC = gcc
+CFLAGS = -Wall 
+
+all: calc format 
+
+calc: calc.o 
+	$(CC) -o calc calc.o 
+
+format: format.o 
+	$(CC) -o format format.o 
+
+format.o: format.c 
+	$(CC) -c $(CFLAGS) format.c 
+
+calc.o: calc.c
+	$(CC) -c $(CFLAGS) calc.c 
+
+clean: 
+	rm *.o calc format
